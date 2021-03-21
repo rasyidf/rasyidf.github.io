@@ -18,6 +18,33 @@
             line-height: 1.5;
         }
 
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            animation: center-animate 1s ease-in-out infinite alternate;
+
+        }
+
+        .sticky>.image {
+            width: 8em;
+            height: 8em;
+            animation: center-animate 2s ease-in-out infinite alternate;
+        }
+
+        .image {
+            width: 12em;
+            height: 12em;
+            animation: center-animate 2s ease-in-out infinite alternate;
+
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         main {
             width: 100%;
             padding-right: 0.75rem;
@@ -25,6 +52,8 @@
             margin-right: auto;
             margin-left: auto;
         }
+
+
 
         section.resume-section {
             display: flex;
@@ -53,7 +82,7 @@
         h2 {
             font-size: 1.5rem;
         }
-        
+
         a {
             color: #007bff;
             text-decoration: none;
@@ -63,7 +92,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <img class="image" width="200px" height="200px" src="assets/img/profile.jpg" alt="bluewhale" />
     </div>
     <main>
@@ -241,89 +270,8 @@
             </div>
         </section>
     </main>
-    <style type="text/css">
-        .text-green {
-            color: #1a7a31;
-        }
-
-        .image {
-            border-radius: 50% !important;
-            max-width: 15rem;
-            max-height: 15rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-            margin-right: auto !important;
-            margin-left: auto !important;
-            border: 0.5rem solid rgba(255, 255, 255, 0.2);
-        }
-
-
-        .subheading {
-            font-weight: 500;
-            font-size: 1.5rem;
-            margin-bottom: 2rem !important;
-        }
-
-        .list-group {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: space-between !important;
-            border-radius: 0.3em;
-        }
-
-        .header {
-            display: flex;
-            align-content: center;
-            background-color: #007bff;
-        }
-
-        .list-inline {
-            padding-left: 0;
-            list-style: none;
-            font-size: 3rem;
-        }
-
-        .list-inline-item:not(:last-child) {
-            margin-right: 0.5rem;
-        }
-
-        .list-inline-item {
-            display: inline-block;
-        }
-
-        .social-icons .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 3.5rem;
-            width: 3.5rem;
-            background-color: #495057;
-            color: #fff;
-            border-radius: 100%;
-            font-size: 1.5rem;
-            margin-right: 1.5rem;
-        }
-
-        .social-icons .social-icon:last-child {
-            margin-right: 0;
-        }
-
-        .social-icons .social-icon:hover {
-            background-color: #007bff;
-        }
-
-        hr {
-            box-sizing: content-box;
-            height: 0;
-            overflow: visible;
-            margin: 0 !important;
-        }
-    </style>
+    <link rel="stylesheet" defer href="assets/css/index.css">
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
