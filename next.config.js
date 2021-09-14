@@ -1,0 +1,7 @@
+module.exports = {
+  images: {
+    loader: 'cloudinary',
+    deviceSizes: [ 1920, 1500, 1000, 500, 300 ],
+    imageSizes: []
+  },
+};

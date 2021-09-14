@@ -1,0 +1,86 @@
+/* Inner cricle  */
+/* Outter cricle  */
+@keyframes spin {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes blob-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+body {
+	&::-webkit-scrollbar {
+		width: 0.4rem;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px #151d2e;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #339eeb;
+		outline: 1px solid rgb(61, 103, 145);
+	}
+}
+.logo {
+	position: relative;
+	cursor: pointer;
+	transition: transform 200ms;
+	&:hover {
+		transform: scale(0.9);
+		&::before {
+			height: 60px;
+			width: 60px;
+			opacity: 1;
+			transition: all 250ms;
+		}
+		&::after {
+			height: 80px;
+			width: 80px;
+			opacity: 1;
+			transition: 250ms;
+			animation: spin 10s infinite linear;
+		}
+	}
+	&::before {
+		content: "";
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		opacity: 0;
+		background: linear-gradient(
+			149deg,
+			rgba(163, 228, 245, 0.19371498599439774) 0%,
+			rgba(0, 157, 238, 0.34217436974789917) 100%
+		);
+		border-radius: 50%;
+		transition: all 250ms;
+	}
+	&::after {
+		content: "";
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		opacity: 0;
+		border-width: thin;
+		border: 1px #63b3ed;
+		border-style: dashed;
+		border-radius: 50%;
+		transition: all 250ms;
+	}
+}
