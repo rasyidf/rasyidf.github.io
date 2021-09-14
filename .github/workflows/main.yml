@@ -1,29 +1,48 @@
+name: github pages
+
 on:
   push:
     branches:
-      - main 
-  pull_request:
+    - master
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-      - name: 'Build only' 
-        uses: tsg-iitkgp/next-build-export-action@v1.1
-        env:
-          BUILD_DIR: .
-          BUILD_ONLY: true
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-      - name: 'Build and deploy'
-        uses: tsg-iitkgp/next-build-export-action@v1.1
-        env:
-          BUILD_DIR: .
-          PAGES_BRANCH: gh-pages
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Cache node_modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-npm-cache-${{ env.cache-name }}-
+          ${{ runner.OS }}-npm-cache-
+    - name: Cache next build
+      uses: actions/cache@v1
+      with:
+        path: .next/cache
+        key: ${{ runner.OS }}-next-build-cache-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-next-build-cache-${{ env.cache-name }}-
+          ${{ runner.OS }}-next-build-cache-
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: build, and export
+      run: |
+        yarn build
+        yarn next export
+        # nojekyll allow files or directories that start with underscores since Jekyll considers these to be special resources and does not copy them to the final site.
+        touch touch out/.nojekyll
+      env:
+        CI: true
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./out
