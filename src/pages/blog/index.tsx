@@ -1,23 +1,13 @@
 import Head from "next/head";
 import { Box, Container, Heading, SlideFade, Divider } from "@chakra-ui/react";
 import Message from "../../components/Message";
-
+import WebMeta from "../../components/WebMeta";
 const Blog = () => {
   return (
     <div>
       <Head>
         <title>Blog | Muhammad Fahmi Rasyid</title>
-        <meta
-          name="description"
-          content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rasyid.dev/" />
-        <meta
-          property="og:title"
-          content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
+        <WebMeta/>
       </Head>
       <main>
         <Container maxW="container.lg" mt={10}>

@@ -3,6 +3,7 @@ import Paragraph from "../components/Paragraph";
 import Head from "next/head";
 import BookCard from "../components/BookCard";
 import Message from "../components/Message";
+import WebMeta from "../components/WebMeta";
 import { Key } from "react";
 
 const Books = ({ books }) => {
@@ -10,17 +11,8 @@ const Books = ({ books }) => {
     <div>
       <Head>
         <title>Books | Muhammad Fahmi Rasyid</title>
-        <meta
-          name="description"
-          content="A list of my favorite development books"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rasyid.dev/" />
-        <meta
-          property="og:title"
-          content="A list of my favorite development books."
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
+        
+        <WebMeta/>
       </Head>
       <Container maxW="container.lg" mt={10}>
         <SlideFade in={true} offsetY={80}>

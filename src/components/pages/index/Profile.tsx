@@ -6,18 +6,15 @@ import {
   LightMode,
   Button,
   ButtonGroup,
-  Flex,
+  Flex, GridItem
 } from "@chakra-ui/react";
 import React from "react";
-import Image from "next/image";
-import profilePic from "../../../public/mascot.svg";
 
 import {
   FaEnvelope,
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaWhatsapp,
 } from "react-icons/fa";
 import Paragraph from "../../Paragraph";
 import SvgMascot from "../../mascot";
@@ -25,14 +22,14 @@ import SvgMascot from "../../mascot";
 const Profile = () => {
   return (
     <SlideFade in={true} offsetY={80}>
-      <Grid templateColumns="repeat(2, 1fr)" gap={2}>
-        <Box>
+      <Grid templateColumns="repeat(2, 1fr)" gap={{ base: 0, md: 2 }}>
+        <GridItem>
           <Heading
             as="h1"
-            fontSize={{ base: "28px", md: "40px", lg: "48px" }}
+            fontSize={{ base: "2em", md: "2.6em", lg: "3.0em" }}
             mb={3}
           >
-            Hey , I’m Muhammad Fahmi Rasyid
+            Hey , I’m<wbr /> Muhammad Fahmi Rasyid
           </Heading>
           <Paragraph fontSize="2xl" lineHeight={1.6}>
             Backend developer - UI / UX Designer, focused on C#, TypeScript, and
@@ -42,17 +39,6 @@ const Profile = () => {
           <Box mt={10}>
             <LightMode>
               <ButtonGroup>
-                <Button
-                  colorScheme="blue"
-                  bg="blue.500"
-                  href="mailto:me@rasyid.dev"
-                  borderRadius={5}
-                  p={3}
-                  as="a"
-                  leftIcon={<FaEnvelope />}
-                >
-                  me@rasyid.dev
-                </Button>
                 <Button
                   colorScheme="blue"
                   bg="blue.500"
@@ -89,11 +75,13 @@ const Profile = () => {
               </ButtonGroup>
             </LightMode>
           </Box>
-        </Box>
 
-        <Flex justifyContent="center" alignContent="center">
-          <SvgMascot />
-        </Flex>
+        </GridItem>
+        <GridItem visibility={{ base: "collapse", md: "visible" }}>
+          <Flex justifyContent="center" alignContent="center">
+            <SvgMascot />
+          </Flex>
+        </GridItem>
       </Grid>
     </SlideFade>
   );

@@ -11,32 +11,34 @@ import {
   Tag,
 } from "@chakra-ui/react";
 import Paragraph from "../components/Paragraph";
+import WebMeta from "../components/WebMeta";
 import { useState } from "react";
 
 const About = () => {
   const [show, setShow] = useState(false);
 
-  const [coolStuff, setCoolStuff] = useState([
-    "React",
+  const coolStuff = [
+    "Vue",
     "Javascript",
-    "Science",
-    "Illustration",
+    "Astronomy",
+    "Peace",
     "AI",
-    "Space",
-    "Android",
+    "C#, WPF",
+    "Books",
     "Movies",
-    "Comics",
+    "Anime",
     "Figma",
-    "Tea",
-  ]);
-  const [notCoolStuff, setNotCoolStuff] = useState([
-    "Angular",
-    "Jquery",
     "Coffee",
+    "Stackoverflow",
+  ];
+  const notCoolStuff = [
+    "PHP",
+    "JQuery",
+    "Bootstrap",
     "Politics",
-    "Narrow-minded",
-    "Working Overtime",
-  ]);
+    "Covid-19",
+    "Race Condition",
+  ];
 
   const handleToggle = () => setShow(!show);
 
@@ -44,17 +46,8 @@ const About = () => {
     <div>
       <Head>
         <title>Muhammad Fahmi Rasyid | About</title>
-        <meta
-          name="description"
-          content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rasyid.dev/" />
-        <meta
-          property="og:title"
-          content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
+
+        <WebMeta />
       </Head>
       <main>
         <Container maxW="container.lg" mt={10}>
@@ -101,7 +94,7 @@ const About = () => {
               fontSize={{ base: "24px", md: "30px", lg: "36px" }}
               mb={3}
             >
-              Cool Stuff
+              What I like
             </Heading>
             <Paragraph fontSize="xl" lineHeight={1.6}>
               {coolStuff.map((item) => (
@@ -122,7 +115,7 @@ const About = () => {
               mt={10}
               mb={3}
             >
-              Meh..
+              I don't really like
             </Heading>
             <Paragraph fontSize="xl" lineHeight={1.6}>
               {notCoolStuff.map((item) => (

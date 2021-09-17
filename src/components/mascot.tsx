@@ -31,8 +31,8 @@ function SvgMascot(props) {
             <animateTransform
               attributeName="transform"
               type="rotate"
-              from="0 275 295"
-              to="360 275 295"
+              from="0 273 298"
+              to="360 273 298"
               dur="9s"
               repeatCount="indefinite"
             />

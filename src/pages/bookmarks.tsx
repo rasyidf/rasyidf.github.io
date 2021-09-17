@@ -13,6 +13,7 @@ import { FaGithubAlt, FaGlobe } from "react-icons/fa";
 import Paragraph from "../components/Paragraph";
 import BookmarkCard from "../components/BookmarkCard";
 import Message from "../components/Message";
+import WebMeta from "../components/WebMeta";
 
 const Bookmarks = ({ bookmarksData }) => {
   const category = [
@@ -33,7 +34,7 @@ const Bookmarks = ({ bookmarksData }) => {
   useEffect(() => {
     bookmarksData = bookmarksData ?? [];
     let filteredBookmark = bookmarksData.filter(
-      (item) => item.fields.type === activeCategory
+      (item: { fields: { type: string; }; }) => item.fields.type === activeCategory
     );
     setBookmarks(filteredBookmark);
   }, [activeCategory]);
@@ -41,17 +42,8 @@ const Bookmarks = ({ bookmarksData }) => {
     <div>
       <Head>
         <title>Bookmarks | Muhammad Fahmi Rasyid</title>
-        <meta
-          name="description"
-          content="A list of my favorite articles & websites, updated weekly."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rasyid.dev/" />
-        <meta
-          property="og:title"
-          content="A list of my favorite articles & websites, updated weekly."
-        />
-        <meta property="og:image" content="/meta-image.jpg" />
+       
+        <WebMeta/>
       </Head>
       <main>
         <Container maxW="container.lg" mt={10}>
