@@ -4,7 +4,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
