@@ -6,6 +6,7 @@ import {
   ListItem,
   ListIcon,
   Link,
+  Skeleton,
 } from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 
@@ -22,6 +23,7 @@ const Timeline = () => {
       <Heading mt={10} mb={5} as="h2" size="md">
         2021
       </Heading>
+      <Skeleton isLoaded>
       <List spacing={18} fontSize="18">
         <ListItem>
           <ListIcon as={CheckCircleIcon} color="blue.500" />
@@ -36,7 +38,8 @@ const Timeline = () => {
           Studying At Universitas Muhammadiyah Yogyakarta
         </ListItem>
       </List>
-      <Link href="https://linkedin.com/in/rasyidufa" target="_blank">
+      </Skeleton>
+      <Link href="https://linkedin.com/in/rasyidufa" target="_blank" rel="noopener">
         <Button mt={10}>Read More</Button>
       </Link>
     </SlideFade>

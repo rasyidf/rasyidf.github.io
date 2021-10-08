@@ -10,16 +10,14 @@ const Index = () => (
 
       <WebMeta />
     </Head>
-    <main>
-      <Container maxW="container.xl" mt={["5", "10"]}>
-        <Profile />
-        <Divider my={10} />
-        <Stack />
-        <Divider my={10} />
-        <Timeline />
-      </Container>
-    </main>
+    <Container maxW="container.lg" mt={10}>
+      <Profile />
+      <Divider my={10} />
+      <Stack />
+      <Divider my={10} />
+      <Timeline />
+    </Container>
   </div>
-)
+);
 
-export default Index
+export default Index;

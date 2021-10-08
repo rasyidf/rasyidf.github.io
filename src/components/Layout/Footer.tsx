@@ -27,7 +27,7 @@ const Footer = () => (
     py="12"
     px={{ base: "4", md: "8" }}
   >
-    <Container maxW="container.xl">
+    <Container maxW={{ base: "100vw", xs: "container.xs", sm: "container.sm", md: "container.md", lg: "container.lg", xl: "container.xl" }}>
       <Stack
         direction="row"
         spacing="4"

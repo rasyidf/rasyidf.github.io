@@ -68,7 +68,14 @@ const Navbar = () => {
   return (
     <>
       <Box py={5} borderTop="2px" borderTopColor="blue.500">
-        <Container maxW="container.xl">
+        <Container
+          maxW={{
+            base: "100vw",
+            md: "container.md",
+            lg: "container.lg",
+            xl: "container.xl",
+          }}
+        >
           <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
             <IconButton
               size={"md"}
