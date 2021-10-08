@@ -11,7 +11,7 @@ const WebMeta = () => {
             property="og:title"
             content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
         />
-        <meta property="og:image" content="/meta-image.jpg" />
+        <meta property="og:image" content="%PUBLIC_HTML%/meta-image.jpg" />
     </>
 }
 
