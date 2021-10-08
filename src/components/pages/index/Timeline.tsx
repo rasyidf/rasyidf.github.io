@@ -38,10 +38,7 @@ const Timeline = () => {
           Studying At Universitas Muhammadiyah Yogyakarta
         </ListItem>
       </List>
-      </Skeleton>
-      <Link href="https://linkedin.com/in/rasyidufa" target="_blank" rel="noopener">
-        <Button mt={10}>Read More</Button>
-      </Link>
+      </Skeleton> 
     </SlideFade>
   );
 };

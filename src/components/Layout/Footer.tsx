@@ -39,24 +39,28 @@ const Footer = () => (
         <ButtonGroup variant="ghost">
           <IconButton
             as="a"
+            rel="noopener"
             href="https://www.twitter.com/rasyidf_"
             aria-label="Twitter"
             icon={<FaTwitter fontSize="20px" />}
           />
           <IconButton
             as="a"
+            rel="noopener"
             href="https://www.instagram.com/rasyidfam/"
             aria-label="instagram"
             icon={<FaInstagram fontSize="20px" />}
           />
           <IconButton
             as="a"
+            rel="noopener"
             href="https://www.linkedin.com/in/rasyidufa/"
             aria-label="Linkedin"
             icon={<FaLinkedin fontSize="20px" />}
           />
           <IconButton
             as="a"
+            rel="noopener"
             href="https://www.github.com/rasyidf"
             aria-label="Github"
             icon={<FaGithub fontSize="20px" />}
@@ -73,7 +77,7 @@ const Footer = () => (
           rounded="md"
           aria-label="Github Repo"
           rel="noopener"
-          href="https://github.com/rasyidf/rasyid.dev/"
+          href="https://github.com/rasyidf/rasyidf.github.io/"
           isExternal
           icon={<FaGithub fontSize="18px" />}
         />

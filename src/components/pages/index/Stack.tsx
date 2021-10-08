@@ -48,31 +48,37 @@ const stacks = [
     icon: <FaNodeJs />,
     title: "Backend",
     stack: ["Node.js", "Express", "Mongoose"],
+    url: "https://www.geeksforgeeks.org/mern-stack",
   },
   {
     icon: <FaPython />,
     title: "Python",
     stack: ["Flask", "Django", "Streamlit"],
+    url: "https://en.wikipedia.org/wiki/Flask_(web_framework)",
   },
   {
     icon: <FaReact />,
     title: "Frontend",
     stack: ["React", "Redux", "React-Router", "Next.js"],
+    url: "https://react-redux.js.org/",
   },
   {
     icon: <FaVuejs />,
     title: "Vue",
     stack: ["Vue", "Nuxt.js", "Vue-Router", "Vue-CLI"],
+    url: "https://vuejs.org/",
   },
   {
     icon: <FaDesktop />,
     title: "Desktop WPF",
     stack: ["C#", "WPF", "MVVMToolkit"],
+    url: "https://dotnet.microsoft.com/",
   },
   {
     icon: <FaDesktop />,
     title: "Desktop UWP",
     stack: ["C#", "UWP", "WinUI 2.6"],
+    url: "https://dotnet.microsoft.com/",
   },
 ];
 
