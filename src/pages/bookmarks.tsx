@@ -58,7 +58,7 @@ const Bookmarks = ({ bookmarksData }) => {
               </Heading>
               <Paragraph fontSize="xl" lineHeight={1.6}>
                 A list of my favorite articles & websites and tools, updated
-                weekly.
+                weekly. 🐋
               </Paragraph>
             </Box>
             <Divider my={10} />
