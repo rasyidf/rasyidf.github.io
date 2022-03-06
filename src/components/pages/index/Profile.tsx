@@ -45,8 +45,8 @@ const Profile = () => {
             <wbr /> Muhammad Fahmi Rasyid
           </Heading>
           <Paragraph fontSize="2xl" lineHeight={1.6}>
-            Backend developer - UI / UX Designer, focused on C#, TypeScript, and
-            Python. I work as a Backend developer. You’ve found my personal
+            Web/Desktop developer - UI / UX Designer, focused on C#, TypeScript, and
+            Python. I work as a Frontend developer. You’ve found my personal
             website on the internet.
           </Paragraph>
           <Box mt={10}>
