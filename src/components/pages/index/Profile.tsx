@@ -14,7 +14,7 @@ import React, { useEffect } from "react";
 
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Paragraph from "../../Paragraph";
-import SvgMascot from "../../mascot";
+import SvgMascot from "../../SvgMascot";
 
 const Profile = () => {
   const [isLoading, setIsLoading] = React.useState(true);

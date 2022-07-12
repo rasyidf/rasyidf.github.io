@@ -24,7 +24,7 @@ const BookCard = ({ book }) => {
           w="100%"
           p={4}
           mb={5}
-          d="inline-block"
+          display="inline-block"
           borderColor={useColorModeValue("gray.200", "gray.700")}
           borderRadius={5}
           borderWidth="1px"
@@ -36,7 +36,7 @@ const BookCard = ({ book }) => {
           }}
         >
           <Box
-            d="flex"
+            display="flex"
             flexDirection="column"
             alignItems="start"
             justifyContent="space-between"

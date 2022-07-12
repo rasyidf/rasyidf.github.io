@@ -15,7 +15,7 @@ const Message = ({
     >
       <Box
         mt={10}
-        d="flex"
+        display="flex"
         alignItems="center"
         borderColor={useColorModeValue("gray.100", "gray.700")}
         borderWidth="1px"

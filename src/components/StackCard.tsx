@@ -19,7 +19,7 @@ export const StackCard = ({ stack }) => {
         borderWidth="1px"
         transition=".5s"
         cursor="pointer"
-        d="flex"
+        display="flex"
         role="group"
         _hover={{
           borderColor: "blue.500",
