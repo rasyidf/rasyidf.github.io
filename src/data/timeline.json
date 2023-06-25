@@ -1,0 +1,65 @@
+[
+	{
+		"date": "10-01-2021",
+		"title": "Frontend Developer at Logee Control Tower",
+		"description": "Created Typescript codebase. Implemented Clean Architecture and code generation. Migrated legacy codebase to webpack 5. Developed Reactive and Responsive dashboard with partial PWA support.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "03-01-2021",
+		"title": "Back End Developer at Logee Control Tower",
+		"description": "Developed a logistic data insight API. Created DDD code generation. Assisted Documentation Engineer creating Kafka topics documentation.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "02-01-2021",
+		"title": "Research Assistant",
+		"icon": "feather:book"
+	},
+	{
+		"date": "08-01-2020",
+		"title": "Research Assistant Intern",
+		"description": "Working on Dental Analyzer Software with RCNN Research.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "07-01-2019",
+		"title": "Web Developer at Hafari.id",
+		"description": "Joined hafari.id as a Web Developer.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "04-01-2020",
+		"title": "Web Developer at Asoka Law Firm",
+		"description": "Developed a company profile website for Asoka Law Firm.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "02-01-2020",
+		"title": "Web Developer at MI Muhammadiyah Pabelan",
+		"description": "Worked as a Web Developer at MI Muhammadiyah Pabelan.",
+		"icon": "feather:briefcase"
+	},
+	{
+		"date": "10-10-2019",
+		"title": "Start University",
+		"description": "Began Studying Informatics at Universitas Muhammadiyah Yogyakarta",
+		"icon": "feather:book"
+	},
+	{
+		"date": "01-01-2019",
+		"title": "User Experience Designer",
+		"description": "Started as a User Experience Designer at Minaret Seven.",
+		"icon": "feather:briefcase",
+		"link": {
+			"text": "Visit MinaretSeven",
+			"url": "https://minaretseven.com/"
+		}
+	},
+	{
+		"date": "04-23-1999",
+		"title": "Birthday!",
+		"description": "",
+		"icon": "feather:gift"
+	}
+]

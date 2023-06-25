@@ -1,0 +1,40 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"alias": "rasyid.dev",
+	"cleanUrls": true,
+	"public": true,
+	"regions": [
+		"lhr1"
+	],
+	"redirects": [
+		{
+			"source": "/cv",
+			"destination": "https://read.cv/rasyidf"
+		},
+		{
+			"source": "/github",
+			"destination": "https://github.com/rasyidf"
+		},
+		{
+			"source": "/linkedin",
+			"destination": "https://www.linkedin.com/in/rasyidf"
+		},
+		{
+			"source": "/portfolio",
+			"destination": "/projects"
+		},
+		{
+			"source": "/resume",
+			"destination": "https://read.cv/rasyidf"
+		},
+		{
+			"source": "/twitter",
+			"destination": "https://twitter.com/rasyidf_"
+		},
+		{
+			"source": "/contact",
+			"destination": "https://twitter.com/direct_messages/create/rasyidf_"
+		}
+	]
+}

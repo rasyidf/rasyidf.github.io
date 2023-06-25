@@ -1,76 +1,22 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
+import clsx from 'clsx';
+import { Head, Html, Main, NextScript } from 'next/document';
 
-export default class Document extends NextDocument {
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <meta charSet="UTF-8"/>
-          <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png"></link>
-          <meta
-            name="description"
-            content="Muhammad Fahmi Rasyid Personal Website | Backend developer - UI / UX Designer"
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://rasyid.dev/" />
-          <meta
-            property="og:title"
-            content="Muhammad Fahmi Rasyid | Backend developer - UI / UX De
-            signer"
-          />
-          <meta property="og:image" content="/meta-image.png" />
-
-          <link rel="icon" type="image/png" href="/favicon.ico" />
-          <meta
-            name="description"
-            content="Muhammad Fahmi Rasyid Personal Website | Backend developer - UI / UX Designer"
-          />
-          <meta name="keywords" content="Backend, Frontend, Portfolio" />
-
-          <meta name="theme-color" content="#1A202C" />
-          <meta name="mobile-web-app-capable" content="yes" />
-
-          <meta
-            name="apple-mobile-web-app-title"
-            content="Muhammad Fahmi Rasyid | Backend developer - UI / UX Designer"
-          />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
-
-          <meta name="msapplication-navbutton-color" content="#1A202C" />
-          <meta name="msapplication-TileColor" content="#1A202C" />
-          <meta name="msapplication-TileImage" content="ms-icon-144x144.png" />
-          <meta name="msapplication-config" content="browserconfig.xml" />
-
-          <meta name="application-name" content="RasyidDev" />
-          <meta
-            name="msapplication-tooltip"
-            content="Rasyid Personal Website"
-          />
-          <meta name="msapplication-starturl" content="/" />
-
-          <meta name="msapplication-tap-highlight" content="no" />
-
-          <meta name="full-screen" content="yes" />
-          <meta name="browsermode" content="application" />
-
-          <meta name="nightmode" content="enable" />
-
-          <meta name="layoutmode" content="standard"></meta>
-          <meta name="imagemode" content="force"></meta>
-          <meta name="screen-orientation" content="landscape"></meta>
-        </Head>
-        <body>
-          <ColorModeScript />
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+export default function Document(): JSX.Element {
+	return (
+		<Html lang="en">
+			<Head>
+				<link rel="icon" type="image/png" href="/favicon.png" />
+			</Head>
+			<body
+				className={clsx(
+					'antialiased',
+					'bg-gradient-to-br from-white via-gray-100 to-white dark:from-black from-20% dark:via-gray-700 dark:to-black to-80%',
+					'font-inter text-gray-500',
+					'selection:bg-gray-900 selection:dark:bg-white selection:text-white selection:dark:text-primary-500',
+				)}>
+				<Main />
+				<NextScript />
+			</body>
+		</Html>
+	);
 }
