@@ -21,10 +21,6 @@
 			"destination": "https://www.linkedin.com/in/rasyidf"
 		},
 		{
-			"source": "/portfolio",
-			"destination": "/projects"
-		},
-		{
 			"source": "/resume",
 			"destination": "https://read.cv/rasyidf"
 		},
@@ -35,6 +31,14 @@
 		{
 			"source": "/contact",
 			"destination": "https://twitter.com/direct_messages/create/rasyidf_"
+		},
+		{
+			"source": "/portfolio",
+			"destination": "/projects"
+		},
+		{
+			"source": "/(.*)",
+			"destination": "/index.html"
 		}
 	]
 }

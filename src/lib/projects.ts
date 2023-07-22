@@ -50,7 +50,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 		return null;
 	}
 
-	const { data } = await response.json() as any;
+	const { data } = await response.json() as unknown as { data: { search: { nodes: Array<GitHubRepos> } } };
 	const repositories = data?.search?.nodes as Array<GitHubRepos>;
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
