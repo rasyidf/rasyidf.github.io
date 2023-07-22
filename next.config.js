@@ -4,10 +4,11 @@ const { withAxiom } = require('next-axiom');
 const ContentSecurityPolicy = `
   child-src *.google.com streamable.com;
   connect-src *;
-  default-src 'self';
+  default-src 'self' *.rasyid.dev;
   font-src 'self';
   img-src * blob: data:;
   media-src 'none'; 
+  script-src 'self' 'unsafe-inline' *.rasyid.dev;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   worker-src 'self' 'unsafe-inline' blob:;
 `;
