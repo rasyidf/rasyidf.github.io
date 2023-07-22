@@ -7,8 +7,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   font-src 'self';
   img-src * blob: data:;
-  media-src 'none';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.splitbee.io;
+  media-src 'none'; 
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   worker-src 'self' 'unsafe-inline' blob:;
 `;
