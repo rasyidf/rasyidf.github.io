@@ -1,11 +1,12 @@
 import { fetchProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
-import { Animate, List } from '~/components';
-import { ListActionType } from '~/types';
+import { Animate, Button, List } from '~/components';
+import { ListActionType, NavigationItemType } from '~/types';
 
 import type { GetStaticProps } from 'next';
 
 import type { ListAction, Project } from '~/types';
+import { GITHUB_REPOS_URL } from '~/lib/navigation';
 
 interface ProjectProps {
 	stringifiedProjects: string;
@@ -23,7 +24,6 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 
 export default function ProjectsPage({ stringifiedProjects }: ProjectProps): JSX.Element {
 	const projects = JSON.parse(stringifiedProjects) as Array<Project>;
-	console.log(projects);
 	return (
 		<Layout.Default seo={{ title: 'rasyid ─ projects' }}>
 			<div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
@@ -72,7 +72,27 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps): JSX
 								/>
 							</Animate>
 						))}
+						{
+							(projects?.length === 0 || !projects) && (
+								<div className="flex flex-col items-center justify-center h-screen space-y-4">
+									<h1 className='text-4xl font-extrabold text-gray-500 dark:text-white tracking-tight sm:text-5xl'>
+										Opps!
+									</h1>
+									<p className="text-gray-500 dark:text-gray-400">
+										I can&apos;t fetch my projects right now. <br />
+										You can check them out on my Github instead.
+									</p>
+									<Button.Standard
+										type={NavigationItemType.LINK}
+										href={GITHUB_REPOS_URL}
+										icon="feather:github">
+										Github
+									</Button.Standard>
+								</div>
+							)
+						}
 					</List.Container>
+
 				</div>
 			</div>
 		</Layout.Default>

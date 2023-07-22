@@ -1,6 +1,4 @@
 import { create } from 'zustand';
-import { useEffect } from 'react';
-import { useMedia } from 'react-use';
 
 import type { Settings } from '~/types';
 
@@ -14,6 +12,6 @@ type Setter = {
 export const usePersistantState = create<Settings & Setter>((set) => ({
 	animations: true,
 	sound: true,
-	setAnimations: (value: boolean) => set({ animations: value }),
-	setSound: (value: boolean) => set({ sound: value }),
+	setAnimations: (value: boolean): void => set({ animations: value }),
+	setSound: (value: boolean): void => set({ sound: value }),
 })); 

@@ -1,12 +1,12 @@
 import { useTheme } from 'next-themes';
 
-import { Status } from '~/components';
-import { usePersistantState, useStatus } from '~/lib';
+import { usePersistantState } from '~/lib';
 
 import { NavigationItemType, Theme } from '~/types';
 
 import type { NavigationItem, NavigationItems } from '~/types';
 
+export const GITHUB_REPOS_URL = 'https://github.com/rasyidf';
 const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
@@ -46,7 +46,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			type: NavigationItemType.LINK,
 			icon: 'feather:github',
 			text: 'GitHub',
-			href: 'https://github.com/rasyidf',
+			href: GITHUB_REPOS_URL,
 			external: true,
 		},
 	],
@@ -56,24 +56,11 @@ export function useNavigation(): {
 	menu: NavigationItems;
 	settings: NavigationItems;
 } {
-	const { animations: background, sound, setAnimations, setSound } = usePersistantState();
-	const { color, loading, status } = useStatus();
+	const { animations: animationState, sound, setAnimations, setSound } = usePersistantState();
 	const { theme, setTheme } = useTheme();
 
 	const menuItems: NavigationItems = [
 		...staticMenuItems,
-		...(!loading && status.discord_status !== 'offline'
-			? [
-				[
-					{
-						type: NavigationItemType.LINK,
-						icon: <Status.Indicator color={color} pulse />,
-						text: 'Status',
-						href: '/status',
-					} as NavigationItem,
-				],
-			]
-			: []),
 	];
 
 	const settingsItems: NavigationItems = [
@@ -81,10 +68,10 @@ export function useNavigation(): {
 			{
 				type: NavigationItemType.ACTION,
 				icon: 'feather:image',
-				endIcon: background ? 'feather:check-circle' : 'feather:circle',
-				text: `Animations ${background ? 'On' : 'Off'}`,
+				endIcon: animationState ? 'feather:check-circle' : 'feather:circle',
+				text: `Animations ${animationState ? 'On' : 'Off'}`,
 				onClick: () =>
-					setAnimations(!background),
+					setAnimations(!animationState),
 			},
 			{
 				type: NavigationItemType.ACTION,

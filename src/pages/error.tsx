@@ -24,9 +24,9 @@ export default function Error(): JSX.Element {
 							{status}
 						</h1>
 						<p className="mt-8 text-sm font-medium text-gray-300 dark:text-gray-400">
-							Looks like something went wrong on our end.
+							Look like something went wrong with my website.
 							<br />
-							This isn&apos;t your fault, it&apos;s ours. Please try again later.
+							This isn&apos;t your fault, Sometimes, I&apos;m just a clumsy developer.
 						</p>
 						<div className="mt-6 flex justify-center items-center space-x-4">
 							<Button.Standard

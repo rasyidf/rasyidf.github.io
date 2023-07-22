@@ -71,7 +71,7 @@ export function Standard(): JSX.Element {
 					value: 0,
 				},
 				uColor: {
-					value: new Color(colors.primary[500]),
+					value: new Color(colors.primary[400]),
 				},
 			},
 			transparent: true,

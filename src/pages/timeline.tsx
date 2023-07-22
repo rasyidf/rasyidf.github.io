@@ -1,20 +1,20 @@
-import { format, parse } from 'date-fns';
 import { Icon } from '@iconify/react';
+import { parse } from 'date-fns';
 
 import { Button, Pill } from '~/components';
 import { Layout } from '~/layouts';
 
 import type { GetStaticProps } from 'next';
 
-import type { Timeline, TimelineEvent } from '~/types';
 import { formatDate } from '~/lib/dates';
+import type { Timeline, TimelineEvent } from '~/types';
 
 interface TimelineProps {
 	timeline?: Timeline;
 }
 
 export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
-	const { default: rawTimeline } = await import('~/data/timeline.json');
+	const { default: rawTimeline } = await import('../data/timeline.json');
 	const timeline = (rawTimeline as Array<TimelineEvent>).sort(
 		(a, b) => +new Date(b.date) - +new Date(a.date),
 	);
@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
 export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): JSX.Element {
 	const timeline = rawTimeline.map((event) => ({
 		...event,
-		// Note: Custom parser needed as Safari on iOS doesn't like the standard `new Date()` parsing
 		date: parse(event.date.toString(), 'MM-dd-yyyy', new Date()),
 	}));
 
@@ -38,7 +37,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): 
 			<div className="flex flex-grow min-h-screen pt-16 pb-12">
 				<div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
 					<ul className="-mb-8" role="list">
-						{timeline.map((event, index) => (
+						{timeline?.map((event, index) => (
 							<li className="my-1" key={event.title}>
 								<div className="relative pb-8">
 									{index !== timeline.length - 1 && (
@@ -90,6 +89,16 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): 
 								</div>
 							</li>
 						))}
+						{
+							!timeline && (
+								<>
+									<h1>Well, that&apos;s awkward</h1>
+									<p>I assure you I&apos;ve done things, but I can&apos;t fetch my timeline right now.</p>
+								</>
+
+							)
+						}
+
 					</ul>
 				</div>
 			</div>

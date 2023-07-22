@@ -1,4 +1,7 @@
-function SvgMascot(props) {
+import { usePersistantState } from "~/lib";
+
+function SvgMascot(props): JSX.Element {
+    const { animations } = usePersistantState();
     return (
         <svg
             width="100%"
@@ -28,14 +31,18 @@ function SvgMascot(props) {
                         d="M119.138 139.957c35.561-31.341 86.19-42.86 139.261-47.272 53.297-4.655 109.034-2.201 146.01 25.973 37.212 28.164 55.662 82.048 51.135 130.186-4.763 48.148-32.728 90.794-66.969 130.688-33.994 40.116-74.489 77.723-119.701 83.188-44.987 5.222-95.164-21.677-133.696-58.394-38.542-36.949-65.687-83.937-68.772-132.907-3.32-48.959 17.171-100.122 52.732-131.462z"
 
                     >
-                        <animateTransform
-                            attributeName="transform"
-                            type="rotate"
-                            from="0 278 298"
-                            to="360 273 298"
-                            dur="9s"
-                            repeatCount="indefinite"
-                        />
+                        {
+                            animations && (
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    from="0 278 298"
+                                    to="360 273 298"
+                                    dur="9s"
+                                    repeatCount="indefinite"
+                                />)
+                        }
+
                     </path>
                     <path fill="url(#mascot_svg__pattern0)" d="M162 16h182v372H162z" />
                 </g>

@@ -8,5 +8,4 @@ export { colors } from './colors';
 export { usePersistantState } from './state';
 export { useClick } from './sounds';
 export { useNavigation } from './navigation';
-export { useSeoProps } from './seo';
-export { useStatus } from './lanyard';
+export { useSeoProps } from './seo'; 

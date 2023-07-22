@@ -1,4 +1,4 @@
-export function TailwindIndicator() {
+export function TailwindIndicator(): JSX.Element {
     if (process.env.NODE_ENV === "production") return null
 
     return (
