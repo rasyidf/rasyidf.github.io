@@ -1,5 +1,4 @@
 import NProgress from 'nprogress';
-import { Analytics } from '@vercel/analytics/react';
 
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
