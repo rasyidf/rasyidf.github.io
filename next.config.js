@@ -8,11 +8,11 @@ const ContentSecurityPolicy = `
   font-src 'self';
   img-src * blob: data:;
   media-src 'none'; 
-  script-src 'self' 'unsafe-inline' *.rasyid.dev;
+
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   worker-src 'self' 'unsafe-inline' blob:;
 `;
-
+//   script-src 'self' 'unsafe-inline' *.rasyid.dev;
 /**
  * @type {import('next').NextConfig}
  */
@@ -45,10 +45,10 @@ const config = {
 			{
 				source: '/(.*)',
 				headers: [
-					{
-						key: 'Content-Security-Policy',
-						value: ContentSecurityPolicy.replace(/\n/g, ''),
-					},
+					// {
+					// 	key: 'Content-Security-Policy',
+					// 	value: ContentSecurityPolicy.replace(/\n/g, ''),
+					// },
 					{
 						key: 'Referrer-Policy',
 						value: 'origin-when-cross-origin',
